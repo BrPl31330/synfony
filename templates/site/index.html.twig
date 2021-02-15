@@ -13,5 +13,16 @@ des blocks definis par le parent
     <button class="btn">{{ button_label|default('Save') }}</button>
     <div class="{{ classConfirmation ?? 'gris' }}">{{ messageConfirmation ?? "texte par défaut" }}</div>
 {{ form_end(form) }}
-
 {% endblock %}
+
+{% block commentaire1 %}
+<p>Un site web, site Web1,2, ou simplement site3, est un ensemble de pages web et de ressources reliées par des hyperliens, défini et accessible par une adresse web. Un site est développé à l'aide de langages de programmation web, puis hébergé sur un serveur web accessible via le réseau mondial Internet, un intranet local, ou n'importe quel autre réseau, tel le darknet. L'ensemble des sites web publics constituent le World Wide Web.</p>
+{% endblock %}
+
+{% block photo1 %}
+<img src="{{ asset('images/imageSiteWeb.PNG') }}" alt="photo1">
+<img src="{{ asset('images/imageSiteWeb2.PNG') }}" alt="photo2">
+{% endblock %}
+            
+
+
