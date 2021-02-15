@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Projet Symfony</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style-dev1.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style-dev2.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style-dev3.css') }}">
+
+    {% block carte1 %}
+    {% endblock %}
+
 </head>
 <body>
     <header>
@@ -17,17 +24,18 @@
     <main>
         <section>
             {% block titre1 %}
-            <h1>La mer</h1>
+            <h1>MON TITRE1 DEV1</h1>
             {% endblock %}
-            {% block commentaire1 %}
-            <p>Cette définition confond les océans, les mers fermées ou ouvertes ainsi que les grands lacs salés. On la retrouve dans un contexte historique ou familier (opposition de la mer et de la montagne dans les vacances, la mer est bonne ? pour évoquer sa température). </p>
+            {% block titre2 %}
+            <h1>LA MODIF QUE LE DEV2 AJOUTE et le dev2 continue à travailler sur son code</h1>
             {% endblock %}
-            {% block photo1 %}
+
+            {% block carte2 %}
+            {% endblock %}
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, numquam in, mollitia culpa quia nostrum eius amet modi ipsam minus inventore assumenda eum ipsum voluptates, totam quibusdam similique consequatur expedita?</p>
             <img src="{{ asset('images/photo1.jpg') }}" alt="photo1">
-            {% endblock %}
         </section>
-        {% block formulaire %}
-        {% endblock %}
     </main>
     <footer>
         <p>tous droits réservés</p>

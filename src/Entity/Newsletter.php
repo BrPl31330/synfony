@@ -73,3 +73,4 @@ class Newsletter
         return $this;
     }
 }
+

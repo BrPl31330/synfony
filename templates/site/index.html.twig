@@ -1,14 +1,17 @@
 {% extends 'parent.html.twig' %}
 
+{# 
+le template enfant ne fait que remplir 
+des blocks definis par le parent
+#}
+
 {% block titre1 %}
-<h1>Accueil</h1>
-{% endblock %}
+<h1>Accueil PAR DEV1</h1>
 
-{% block commentaire1 %}
-<h1>La mer</h1>
-<p>Cette définition confond les océans, les mers fermées ou ouvertes ainsi que les grands lacs salés. On la retrouve dans un contexte historique ou familier (opposition de la mer et de la montagne dans les vacances, la mer est bonne ? pour évoquer sa température). </p>
-{% endblock commentaire1 %}
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="{{ classConfirmation ?? 'gris' }}">{{ messageConfirmation ?? "texte par défaut" }}</div>
+{{ form_end(form) }}
 
-{% block photo1 %}
-<img src="{{ asset('images/photo3.png') }}" alt="photo1">
 {% endblock %}
