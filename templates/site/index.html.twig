@@ -6,13 +6,11 @@ des blocks definis par le parent
 #}
 
 {% block titre1 %}
-<h1>Accueil PAR DEV1</h1>
+<h1>Accueil du site</h1>
+{% endblock %}
 
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-    <div class="{{ classConfirmation ?? 'gris' }}">{{ messageConfirmation ?? "texte par défaut" }}</div>
-{{ form_end(form) }}
+{% block titre2 %}
+<h1>Le web, qu'est-ce ?</h1>
 {% endblock %}
 
 {% block commentaire1 %}
@@ -23,6 +21,12 @@ des blocks definis par le parent
 <img src="{{ asset('images/imageSiteWeb.PNG') }}" alt="photo1">
 <img src="{{ asset('images/imageSiteWeb2.PNG') }}" alt="photo2">
 {% endblock %}
-            
 
+  {% block formulaire %}          
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="{{ classConfirmation ?? 'gris' }}">{{ messageConfirmation ?? "texte par défaut" }}</div>
+{{ form_end(form) }}
+{% endblock %}
 

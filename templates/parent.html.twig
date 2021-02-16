@@ -17,18 +17,28 @@
             <a href="{{ path('galerie') }}">galerie</a>
             <a href="{{ path('contact') }}">contact</a>
         </nav>
+        {% if app.user %}
+            <div class="mb-3">
+                Bienvenue {{ app.user.username }}, 
+                <a href="{{ path('admin') }}">admin</a>
+                <a href="{{ path('app_logout') }}">Déconnexion</a>
+            </div>
+        {% else %}
+            <nav>
+                <a href="{{ path('app_register') }}">créez votre compte</a>
+                <a href="{{ path('app_login') }}">connexion</a>
+            </nav>
+        {% endif %}
     </header>
     <main>
         <section>
             {% block titre1 %}
-            <h1>Site Web</h1>
             {% endblock %}
+
             {% block titre2 %}
-            <h1>Le sous-titre du site</h1>
             {% endblock %}
 
             {% block commentaire1 %}
-            
             {% endblock %}
 
 
