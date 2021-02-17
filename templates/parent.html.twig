@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Projet Symfony</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style-dev1.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style-dev2.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style-dev3.css') }}">
 
     {% block carte1 %}
     {% endblock %}
@@ -14,13 +17,20 @@
     <header>
         <nav>
             <a href="{{ path('index') }}">accueil</a>
+            <a href="{{ path('annonces') }}">annonces</a>
             <a href="{{ path('galerie') }}">galerie</a>
             <a href="{{ path('contact') }}">contact</a>
         </nav>
-        {% if app.user %}
+        {% if is_granted('ROLE_ADMIN') %}
             <div class="mb-3">
                 Bienvenue {{ app.user.username }}, 
                 <a href="{{ path('admin') }}">admin</a>
+                <a href="{{ path('app_logout') }}">Déconnexion</a>
+            </div>
+        {% elseif is_granted('ROLE_USER') %}
+            <div class="mb-3">
+                Bienvenue {{ app.user.username }}, 
+                <a href="{{ path('membre') }}">espace membre</a>
                 <a href="{{ path('app_logout') }}">Déconnexion</a>
             </div>
         {% else %}
@@ -41,6 +51,8 @@
             {% block commentaire1 %}
             {% endblock %}
 
+            {% block annonces %}
+            {% endblock %}
 
             {% block photo1 %}
             {% endblock %}

@@ -10,20 +10,29 @@ des blocks definis par le parent
 {% endblock %}
 
 {% block titre2 %}
-<h1>Le web, qu'est-ce ?</h1>
+<h1>Vous souhaitez faire du sport ?</h1>
 {% endblock %}
 
 {% block commentaire1 %}
-<p>Un site web, site Web1,2, ou simplement site3, est un ensemble de pages web et de ressources reliées par des hyperliens, défini et accessible par une adresse web. Un site est développé à l'aide de langages de programmation web, puis hébergé sur un serveur web accessible via le réseau mondial Internet, un intranet local, ou n'importe quel autre réseau, tel le darknet. L'ensemble des sites web publics constituent le World Wide Web.</p>
+<p>Oui, mais ...</p>
+<p>- Vous manquez de volonté,</p>
+<p>- Vous êtes nouveaux dans votre région et vous n'avez pas encore d'amis ?</p>
+<p>- Vous ne connaissez pas les bons endroits, les bonnes salles,</p>
+<p>- Vous n'avez pas de moyen de locomotion ?</p>
+
+<p><span>Alors, vous êtes au bon endroit.</span></p>
+<p>Notre application et ses adhérents vont essayer de répondre à toutes vos questions</p>
 {% endblock %}
 
 {% block photo1 %}
-<img src="{{ asset('images/imageSiteWeb.PNG') }}" alt="photo1">
-<img src="{{ asset('images/imageSiteWeb2.PNG') }}" alt="photo2">
+<img src="{{ asset('images/image.PNG') }}" alt="photo1">
+
+<img src="{{ asset('images/image.PNG') }}" alt="photo2">
+
 {% endblock %}
 
   {% block formulaire %}          
-{{ form_start(form) }}
+  {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
     <div class="{{ classConfirmation ?? 'gris' }}">{{ messageConfirmation ?? "texte par défaut" }}</div>
